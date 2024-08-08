@@ -23,6 +23,17 @@
 
 	gtag('config', 'G-039VPBVHWX');
 	</script>
+	<!-- <style>
+		@keyframes typing {
+		  from { width: 0; }
+		  to { width: 100%; }
+		}
+		
+		@keyframes blink-caret {
+		  from, to { border-color: transparent; }
+		  50% { border-color: #61feda; }
+		}
+	  </style> -->
 </head>
 
 <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
@@ -39,12 +50,20 @@
 
 			<div class="collapse navbar-collapse" id="ftco-nav">
 				<ul class="navbar-nav nav ml-auto">
-					<li class="nav-item"><a href="#home-section" class="nav-link"><span>Home</span></a></li>
+					
 					<li class="nav-item"><a href="#about-section" class="nav-link"><span>About</span></a></li>
-					<li class="nav-item"><a href="#experience-section" class="nav-link"><span>Experience</span></a></li>
+					<li class="nav-item"><a href="#experience-section" class="nav-link"><span>Certificates</span></a></li>
 					<li class="nav-item"><a href="#teck-stack-section" class="nav-link"><span>Tech Stack</span></a></li>
 					<li class="nav-item"><a href="#project-section" class="nav-link"><span>Projects</span></a></li>
+					<li class="nav-item"><a href="#git-section" class="nav-link"><span>Statistics</span></a></li>
 					<li class="nav-item"><a href="#contact-section" class="nav-link"><span>Contact</span></a></li>
+                    <!-- <div class="counter-wrap ftco-animate d-flex mt-md-2">
+						<div class="text">
+							<p><a href="https://drive.google.com/file/d/1v9NmyC3jLOQuPqvd7Htqy3NrBQYMRif0/view?usp=sharing" target="_blank">View Resume</a></p>
+						</div>
+					</div> -->
+					<li class="nav-item"><a href="https://drive.google.com/file/d/1v9NmyC3jLOQuPqvd7Htqy3NrBQYMRif0/view?usp=sharing " class="nav-link" target="_blank"><span>Resume</span></a></li>
+
 				</ul>
 			</div>
 		</div>
@@ -54,26 +73,70 @@
 	<!-- particles -->
 	<div id="particles-js"></div>
 
-	<section class="hero-wrap js-fullheight">
-		<div class="container">
-			<div class="row no-gutters slider-text js-fullheight justify-content-center align-items-center">
-				<div class="col-lg-8 col-md-6 ftco-animate d-flex align-items-center">
-					<div class="text text-center">
-						<span class="subheading">Hey! I am</span>
-						<h1>Jagannath Gari <h1>Navya</h1> </h1>
-					</div>
-				</div>
+	<section class="hero-wrap js-fullheight" style="position: relative; height: 100vh; display: flex; align-items: center; justify-content: center; background-color: #000;">
+		<div class="container" style="text-align: center; color: #fff;">
+		  <div class="row no-gutters slider-text js-fullheight justify-content-center align-items-center">
+			<div class="col-lg-8 col-md-6 ftco-animate d-flex align-items-center">
+			  <div class="text text-center">
+				<span class="subheading" style="display: block; margin-bottom: 20px;">Hey! I am</span>
+				<h1>Jagannath Gari <h1>Navya</h1></h1>
+				<h2 style="
+				  display: inline-block;
+				  overflow: hidden;
+				  white-space: nowrap;
+				  border-right: 3px solid #61feda; /* Cursor effect */
+				  animation: typing 4s steps(30, end) infinite, blink-caret 0.7s step-end infinite;
+				  font-size: 2rem;
+				  color: #fff;
+				  position: relative;
+				">
+				  <span id="typewriter-text" style="display: inline-block; white-space: nowrap;"></span>
+				</h2>
+			  </div>
 			</div>
-			<div class="scrollDown">
-				<span></span>
-				<span></span>
-				<span></span>
-			</div>
+		  </div>
+		  <div class="scrollDown" style="margin-top: 20px;">
+			<span style="display: inline-block; width: 20px; height: 20px; background-color: #fff; margin: 5px;"></span>
+			<span style="display: inline-block; width: 20px; height: 20px; background-color: #fff; margin: 5px;"></span>
+			<span style="display: inline-block; width: 20px; height: 20px; background-color: #fff; margin: 5px;"></span>
+		  </div>
 		</div>
-		</div>
-		</button>
-		<div class="glyphicon glyphicon-arrow-down"></div>
-	</section>
+		<div class="glyphicon glyphicon-arrow-down" style="position: absolute; bottom: 20px; right: 20px;"></div>
+	  </section>
+	
+	  <script>
+		document.addEventListener('DOMContentLoaded', function () {
+		  const fullText = "MERN Stack Web Developer";
+		  const typewriterText = document.getElementById('typewriter-text');
+		  let currentIndex = 0;
+		  let isDeleting = false;
+		  let timeout;
+	
+		  const typeEffect = () => {
+			if (isDeleting) {
+			  typewriterText.textContent = fullText.substring(0, currentIndex--);
+			  if (currentIndex < 0) {
+				isDeleting = false;
+				timeout = setTimeout(typeEffect, 1500); // Delay before retyping
+			  } else {
+				timeout = setTimeout(typeEffect, 50); // Speed of deleting
+			  }
+			} else {
+			  typewriterText.textContent = fullText.substring(0, currentIndex++);
+			  if (currentIndex > fullText.length) {
+				isDeleting = true;
+				timeout = setTimeout(typeEffect, 1500); // Delay before deleting
+			  } else {
+				timeout = setTimeout(typeEffect, 150); // Speed of typing
+			  }
+			}
+		  };
+	
+		  typeEffect();
+	
+		  return () => clearTimeout(timeout);
+		});
+	  </script>
 
 	<section class="ftco-about img ftco-section ftco-no-pt ftco-no-pb" id="about-section">
 		<div class="container">
@@ -287,36 +350,53 @@
 				<div class="col-md-4 text-center d-flex ftco-animate">
 					<a class="services-1 shadow">
 						<span class="icon">
-							<i><img class="projects" src="./images/projects/weather.png"/></i>
+							<i><img class="projects" src="./images/projects/Shiksha.png"/></i>
 						</span>
 						<div class="desc">
-							<h3 class="mb-4">Weather Application</h3>
-							<p><strong>HTMLl . CSS . JavaScript</strong></p>
+							<h3 class="mb-4">ShikshaSahayak</h3>
+							<p><strong>NodeJS . ChakraUI . React . ExpressJS</strong></p>
 							<div>
-								<img src="https://pngimg.com/uploads/github/github_PNG40.png" alt="" class="logos1" onclick="window.open('https://github.com/Sumithra49/Weather-Application', '_blank')">
-								<img src="./images/go.png" alt="" class="logos ml-3" onclick="window.open('https://changed-weather.netlify.app/', '_blank')">
+								<img src="https://pngimg.com/uploads/github/github_PNG40.png" alt="" class="logos1" onclick="window.open('https://github.com/JagannathGariNavya/ShikshaSahayak', '_blank')">
+								<img src="./images/go.png" alt="" class="logos ml-3" onclick="window.open('https://shikshasahayak-l0px.onrender.com/', '_blank')">
 							</div>
-							<p>A weather application provides up-to-date forecasts and weather information tailored to users' locations and preferences, aiding in planning and decision-making.</p>
+							<p>The ShikshaSahayak Platform is a web-based solution designed to assist students at Masai.</p>
 						</div>
 					</a>
 				</div>
 				<div class="col-md-4 text-center d-flex ftco-animate">
 					<a class="services-1 shadow">
 						<span class="icon">
-							<i><img class="projects" src="./images/projects/atlasion.png"/></i>
+							<i><img class="projects" src="images/projects/edu.png"/></i>
 						</span>
 						<div class="desc">
-							<h3 class="mb-4">atlasion clone</h3>
-							<p><strong>React  .TypescriptL . CSS .HTML . Chakra UI .</strong></p>
+							<h3 class="mb-4">EduSchool</h3>
+							<p><strong>HTML . CSS . ReactJS . ChakraUI</strong></p>
+
 							<div>
-								<img src="https://pngimg.com/uploads/github/github_PNG40.png" alt="" class="logos1" onclick="window.open('https://github.com/tashwini-p/atlasion', '_blank')">
-								<img src="./images/go.png" alt="" class="logos ml-3" onclick="window.open('https://atlassion.netlify.app/', '_blank')">
+								<img src="https://pngimg.com/uploads/github/github_PNG40.png" alt="" class="logos1" onclick="window.open('https://github.com/JagannathGariNavya/EduSchool', '_blank')">
+								<img src="./images/go.png" alt="" class="logos ml-3" onclick="window.open('https://edu-school-two.vercel.app/', '_blank')">
+							</div>
+							<p>EduSchool Course Subscription Plan project aims to create a subscription-based model .</p>
+						</div>
+					</a>
+				</div>
+				<div class="col-md-4 text-center d-flex ftco-animate">
+					<a class="services-1 shadow">
+						<span class="icon">
+							<i><img class="projects" src="./images/projects/figma.jpg"/></i>
+						</span>
+						<div class="desc">
+							<h3 class="mb-4">Viatours</h3>
+							<p><strong>HTML . CSS . FIGMA . SaaS .</strong></p>
+							<div>
+								<img src="https://pngimg.com/uploads/github/github_PNG40.png" alt="" class="logos1" onclick="window.open('https://github.com/jayantjagtap001/CW-Project-G1', '_blank')">
+								<img src="./images/go.png" alt="" class="logos ml-3" onclick="window.open('https://figmagroup1.netlify.app/', '_blank')">
 							</div>
 							<p>Atlassian, a software company known for products like Jira, Confluence, and Trello.</p>
 						</div>
 					</a>
 				</div>
-				<div class="col-md-4 text-center d-flex ftco-animate">
+				<!-- <div class="col-md-4 text-center d-flex ftco-animate">
 					<a class="services-1 shadow">
 						<span class="icon">
 							<i><img class="projects" src="images/projects/ourhome.png"/></i>
@@ -331,17 +411,17 @@
 							<p>Enhance Your Home Management Experience: Save Time and Money with OurHome Web Application</p>
 						</div>
 					</a>
-				</div>
+				</div> -->
 			</div>
 			<div class="row">
 				<div class="col-md-4 text-center d-flex ftco-animate">
 					<a class="services-1 shadow">
 						<span class="icon">
-							<i><img class="projects" src="images/projects/sugar.png" style="width: 400px;margin-left: -10px;"/></i>
+							<i><img class="projects" src="images/projects/casm.png" style="margin-left: -10px;"/></i>
 						</span>
 						<div class="desc">
-							<h3 class="mb-4"> clone of Sugar Cosmetics</h3>
-							<p><strong>HTML . CSS . Bootstrap</strong></p>
+							<h3 class="mb-4">Sugar Cosmetics</h3>
+							<p><strong>HTML . CSS . Bootstrap </strong></p>
 							<div>
 								<img src="https://pngimg.com/uploads/github/github_PNG40.png" alt="" class="logos1" onclick="window.open('https://github.com/shobhit9742/code-crusader-3456', '_blank')">
 								<img src="./images/go.png" alt="" class="logos ml-3" onclick="window.open('https://wondrous-biscochitos-3e0a78.netlify.app/', '_blank')">
@@ -353,24 +433,41 @@
 				<div class="col-md-4 text-center d-flex ftco-animate">
 					<a class="services-1 shadow">
 						<span class="icon">
-							<i><img class="projects" src="images/projects/tomato.png"/></i>
+							<i><img class="projects" src="images/projects/Screenshot (58).png"/></i>
 						</span>
 						<div class="desc">
-							<h3 class="mb-4">TOmato</h3>
-							<p><strong>HTML . CSS . React </strong></p>
+							<h3 class="mb-4">NoBrokerServices</h3>
+							<p><strong>HTML . CSS . JavaScript </strong></p>
 
 							<div>
-								<img src="https://pngimg.com/uploads/github/github_PNG40.png" alt="" class="logos1" onclick="window.open('https://github.com/Sumithra49/Tomato-Food-delivery', '_blank')">
-								<img src="./images/go.png" alt="" class="logos ml-3" onclick="window.open('https://app-food-tomato.netlify.app/', '_blank')">
+								<img src="https://pngimg.com/uploads/github/github_PNG40.png" alt="" class="logos1" onclick="window.open('https://github.com/Sartik0709/Compiler-Chintan-2345', '_blank')">
+								<img src="./images/go.png" alt="" class="logos ml-3" onclick="window.open('https://660e695c7751b065e3797062--imaginative-pixie-6e83c9.netlify.app/', '_blank')">
 							</div>
-							<p>Tomato: Where Efficiency Meets Flavor - Delivering Delicious Meals, Saving You Time, Every Time!</p>
+							<p>EduSchool Course Subscription Plan project aims to create a subscription-based model .</p>
 						</div>
 					</a>
 				</div>
+			</div>
+				
+	</section>
+	<section class="ftco-section git-section ftco-no-pb" id="git-section">
+		<div class="container">
+			<div class="row justify-content-center mb-4 pb-3">
+				<div class="col-md-7 heading-section text-center ftco-animate">
+					<h2 class="mb-4">Statistics</h2>
+					
+				</div>
+				<img src="/images//projects//image.png" alt="">
+			</div>
+
+			
+				
 				
 	</section>
 
-	<section class="ftco-section contact-section ftco-no-pb" id="contact-section">
+
+	
+	<!-- <section class="ftco-section contact-section ftco-no-pb" id="contact-section">
 		<div class="container">
 			<div class="row justify-content-center mb-4 pb-3">
 				<div class="col-md-7 heading-section text-center ftco-animate">
@@ -402,7 +499,108 @@
 					</div>
 				</div>
 				
+	</section> -->
+	<section class="ftco-section contact-section ftco-no-pb" id="contact-section">
+		<div class="container">
+			<div class="row justify-content-center mb-4 pb-3">
+				<div class="col-md-7 heading-section text-center ftco-animate">
+					<h2 class="mb-4">Contact Me</h2>
+				</div>
+			</div>
+	
+			<div class="row" style="display: flex; flex-wrap: wrap; gap: 10px;" class="mb-fd-column">
+				<!-- Contact Info Section -->
+				<div class="contact-info mb-5" style="flex: 1;  padding: 10px; box-sizing: border-box;">
+					<div>
+						<div class="col-md-8 col-lg-8 d-flex ftco-animate">
+							<div class="align-self-stretch box text-center p-4 shadow services-1">
+								<div class="icon d-flex align-items-center justify-content-center">
+									<span class="icon-phone2"></span>
+								</div>
+								<div>
+									<h3 class="mb-4">Contact Number</h3>
+									<p><a href="tel:8919746820">+91 8951359265</a></p>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-8 col-lg-8 d-flex ftco-animate">
+							<div class="align-self-stretch box text-center p-4 shadow services-1">
+								<div class="icon d-flex align-items-center justify-content-center">
+									<span class="icon-paper-plane"></span>
+								</div>
+								<div>
+									<h3 class="mb-4">Email Address</h3>
+									<p><a href="mailto:jnavyan12@gmail.com">jnavyan12@gmail.com</a></p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+	
+				<!-- Form Section -->
+				<div style="flex: 1; padding: 10px; box-sizing: border-box; margin-top: 20px;">
+					<form id="contact-form" class="contact-form">
+						<div class="form-group">
+							<label for="name" class="form-label">Name</label>
+							<input type="text" id="name" name="from_name" class="form-control" placeholder="Your Name" required />
+						</div>
+						<div class="form-group mt-4">
+							<label for="email" class="form-label">Email</label>
+							<input type="email" id="email" name="from_email" class="form-control" placeholder="Your Email" required />
+						</div>
+						<div class="form-group mt-4">
+							<label for="message" class="form-label">Message</label>
+							<textarea id="message" name="message" class="form-control" placeholder="Your Message" rows="4" required></textarea>
+						</div>
+						<button type="submit" class="btn btn-primary mt-4" style="width:120px; height:7vh;">Send</button>
+					</form>
+				</div>
+			</div>
+		</div>
 	</section>
+	
+	<style>
+		@media (max-width: 768px) {
+			.contact-info,
+			.contact-form-wrapper {
+				width: 100% !important;
+				margin-left: 0 !important;
+				margin-right: 0 !important;
+			}
+	
+			.contact-info {
+				margin-bottom: 20px !important; 
+			}
+	
+			.contact-form-wrapper {
+				margin-top: 0 !important;
+			}
+		}
+	</style>
+	
+	<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+	<script>
+		// Initialize EmailJS with your public key (User ID)
+		emailjs.init('8n4ZAqKngGKpmq7ZR'); // Replace this with your actual public key
+	
+		document.getElementById('contact-form').addEventListener('submit', function(event) {
+			event.preventDefault();
+			const form = event.target;
+	
+			emailjs.sendForm('service_qqoak2d', 'template_54vo3sp', form)
+				.then(function(response) {
+					alert('Email sent successfully!'); // Alert on success
+					form.reset();  // Reset the form fields after successful submission
+				}, function(error) {
+					alert('Error: ' + JSON.stringify(error)); // Alert on error
+				});
+		});
+	</script>
+	
+	
+	
+	
+	
 
 
 	<footer class="ftco-footer ftco-section">
