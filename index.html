@@ -63,13 +63,28 @@
 						</div>
 					</div> -->
 					<li class="nav-item">
-						<a href="https://drive.google.com/uc?export=download&id=1v9NmyC3jLOQuPqvd7Htqy3NrBQYMRif0" 
-						   class="nav-link" 
-						   target="_blank" 
-						   download="Navya_Jagannath_Resume.pdf">
+						<a href="javascript:void(0);" class="nav-link" onclick="downloadAndOpen();">
 						  <span>Resume</span>
 						</a>
 					  </li>
+					  
+					  <script>
+					  function downloadAndOpen() {
+						  // Open the file in a new tab
+						  window.open('https://drive.google.com/file/d/1ukF5RVQ2eou1Gb7hwDG7p-idK3e_J4rs/view?usp=sharing', '_blank');
+						  
+						  // Create a temporary link element to trigger the download
+						  const link = document.createElement('a');
+						  link.href = 'https://drive.google.com/uc?export=download&id=1ukF5RVQ2eou1Gb7hwDG7p-idK3e_J4rs';
+						  link.download = 'Navya_Jagannath_Resume.pdf'; // Suggest filename for download
+						  document.body.appendChild(link);
+						  link.click();
+						  document.body.removeChild(link);
+					  }
+					  </script>
+					  
+					  
+					  
 					  
 					  
 
@@ -176,13 +191,26 @@
 					<div class="counter-wrap ftco-animate d-flex mt-md-3">
 						<div class="text">
 							<p>
-								<a href="https://drive.google.com/uc?export=download&id=1v9NmyC3jLOQuPqvd7Htqy3NrBQYMRif0" 
-								   target="_blank" 
-								   class="btn btn-primary py-3 px-3" 
-								   download="Navya_Jagannath_Resume.pdf">
+								<a href="javascript:void(0);" class="btn btn-primary py-3 px-3" onclick="downloadAndOpen();">
 								  View Resume
 								</a>
 							  </p>
+							  
+							  <script>
+							  function downloadAndOpen() {
+								  // Open the file in a new tab
+								  window.open('https://drive.google.com/file/d/1ukF5RVQ2eou1Gb7hwDG7p-idK3e_J4rs/view?usp=sharing', '_blank');
+								  
+								  // Create a temporary link element to trigger the download
+								  const link = document.createElement('a');
+								  link.href = 'https://drive.google.com/uc?export=download&id=1ukF5RVQ2eou1Gb7hwDG7p-idK3e_J4rs';
+								  link.download = 'Navya_Jagannath_Resume.pdf'; // Suggest filename for download
+								  document.body.appendChild(link);
+								  link.click();
+								  document.body.removeChild(link);
+							  }
+							  </script>
+							  
 							  
 						</div>
 					</div>
